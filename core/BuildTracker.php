@@ -7,8 +7,8 @@
 		public $errlog;
 	
 		public function __construct($_Codes){
-			$this->Data_Path = '/Data/';
-			$this->Core_Path = '/Core/';
+			$this->Data_Path = 'Data/';
+			$this->Core_Path = 'Core/';
 			$this->generateTrackers($_Codes);
 		}
 		
