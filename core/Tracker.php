@@ -3,7 +3,7 @@
 		
 		private $blizz_data_url;
 		private $versions_data,$cdns_data,$build_config;
-		private $version_hash, $cdn_path, $build_hash;
+		private $version_hash, $cdn_path;
 		private $errlog;
 		private $tracker_code;
 		private $data_path;
@@ -104,9 +104,9 @@
 			}
 			$currentbuildid = $this->prioritySearch($this->versions_data,$this->region_prio,"Region","BuildId"); 
 			$current["date"] = time(); 
-			$current["build-hash"] = $this->build_hash;
-			$current["cdn-hash"] = $this->prioritySearch($this->versions_data,$this->region_prio,"Region","CDNConfig"); 
-			$current["version-name"] = $this->prioritySearch($this->versions_data,$this->region_prio,"Region","VersionsName"); 
+			$current["build_hash"] = $this->version_hash;
+			$current["cdn_hash"] = $this->prioritySearch($this->versions_data,$this->region_prio,"Region","CDNConfig"); 
+			$current["version_name"] = $this->prioritySearch($this->versions_data,$this->region_prio,"Region","VersionsName"); 
 			$current["build_config"] = $this->build_config;
 			if(!isset($history[$currentbuildid])){
 				$history[$currentbuildid] = $current;
